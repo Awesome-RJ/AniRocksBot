@@ -1,8 +1,8 @@
 from os import path
 from configparser import ConfigParser
-import anirocks
-from pyrogram import Client
-from anirocks import Client as AniRocks
+
+from pyrogram import Client as AniRocks
+from pyrogram import Client as anirocks
 
 
 config_file = "bot.ini"
