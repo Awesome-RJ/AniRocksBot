@@ -74,7 +74,7 @@ async def episode_handler(_, query: types.CallbackQuery):
             for anime in data.links
         ],
         [
-            types.InlineKeyboardButton('Direct Stream', url=f'https://www.aniryu.me/watching/{anime_id}/{query.data.split("_")[2]}')
+            types.InlineKeyboardButton('Direct Stream', url=f'https://animerocks.ml/watching/{anime_id}/{query.data.split("_")[2]}')
         ],
         [
             types.InlineKeyboardButton('Back to Episodes', callback_data=f'ep_{anime_id}_{data.totalepisode}')
