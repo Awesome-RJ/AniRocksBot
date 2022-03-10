@@ -27,10 +27,10 @@ async def tracemoe_rs(client, message):
             message.reply_to_message.video.file_size,
         )
         await client.download_media(
-            message.reply_to_message.video,
-            file_name='downloads/' + nama,
+            message.reply_to_message.video, file_name=f'downloads/{nama}'
         )
-        _loc = 'downloads/' + nama
+
+        _loc = f'downloads/{nama}'
         img_file = os.path.join(screen_shot, 'grs.jpg')
         await take_screen_shot(_loc, 0, img_file)
     session = aiohttp.ClientSession()

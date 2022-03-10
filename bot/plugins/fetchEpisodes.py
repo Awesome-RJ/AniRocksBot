@@ -7,13 +7,12 @@ from bot.utils.buttons import _cache, page
 async def episode_handler(_, query: types.CallbackQuery):
     await query.message.edit('**Processing...**')
     _cache[int(str(query.from_user.id) + str(query.message.message_id))] = int(query.data.split('_')[2])
-    button = page(
-                0,
-                _cache[int(str(query.from_user.id) + str(query.message.message_id))],
-                query.data.split('_')[1],
-                'a'
-            )
-    if button:
+    if button := page(
+        0,
+        _cache[int(str(query.from_user.id) + str(query.message.message_id))],
+        query.data.split('_')[1],
+        'a',
+    ):
         await query.message.edit(
             '**Here are the Available Episodes:**',
             reply_markup=types.InlineKeyboardMarkup(
